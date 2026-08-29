@@ -64,10 +64,12 @@ import { ShareButtonDirective } from 'ngx-sharebuttons';
 import { HotkeyModule } from 'angular2-hotkeys';
 import { ColorPickerModule } from '@iplab/ngx-color-picker';
 import { NgxHmCarouselComponent, NgxHmCarouselDynamicDirective, NgxHmCarouselItemDirective } from 'ngx-hm-carousel';
-import { EditorModule, TINYMCE_SCRIPT_SRC } from '@tinymce/tinymce-angular';
+import { EditorModule, HUGERTE_SCRIPT_SRC } from '@hugerte/hugerte-angular';
+import { HUGERTE_ASSETS_PATH } from '@shared/models/hugerte/hugerte.models';
 import { UserMenuComponent } from '@shared/components/user-menu.component';
 import { TruncateWithTooltipDirective } from '@shared/directives/truncate-with-tooltip.directive';
 import { ContextMenuDirective } from '@shared/directives/context-menu.directive';
+import { ChipOverflowDirective } from '@shared/directives/chip-overflow.directive';
 import { NospacePipe } from '@shared/pipe/nospace.pipe';
 import { TranslateModule } from '@ngx-translate/core';
 import { TbCheckboxComponent } from '@shared/components/tb-checkbox.component';
@@ -146,7 +148,6 @@ import { QueueAutocompleteComponent } from '@shared/components/queue/queue-autoc
 import { ContactComponent } from '@shared/components/contact.component';
 import { TimezoneSelectComponent } from '@shared/components/time/timezone-select.component';
 import { FileSizePipe } from '@shared/pipe/file-size.pipe';
-import { WidgetsBundleSearchComponent } from '@shared/components/widgets-bundle-search.component';
 import { SelectableColumnsPipe } from '@shared/pipe/selectable-columns.pipe';
 import { QuickTimeIntervalComponent } from '@shared/components/time/quick-time-interval.component';
 import { OtaPackageAutocompleteComponent } from '@shared/components/ota-package/ota-package-autocomplete.component';
@@ -242,6 +243,10 @@ import { MAT_BUTTON_TOGGLE_DEFAULT_OPTIONS } from '@angular/material/button-togg
 import { RgbaInputComponent } from '@shared/components/color-picker/rgba-input.component';
 import { HslaInputComponent } from '@shared/components/color-picker/hsla-input.component';
 import { InputChangeDirective } from '@shared/components/color-picker/input-change.directive';
+import { PhotoSwipeGalleryDirective } from '@shared/directives/photoswipe-gallery.directive';
+import {
+  AutocompleteAutoScrollRepositionDirective
+} from '@shared/directives/autocomplete-auto-scroll-reposition.directive';
 
 export function MarkedOptionsFactory(markedOptionsService: MarkedOptionsService) {
   return markedOptionsService;
@@ -268,8 +273,8 @@ export function MarkedOptionsFactory(markedOptionsService: MarkedOptionsService)
       useValue: Flow
     },
     {
-      provide: TINYMCE_SCRIPT_SRC,
-      useValue: 'assets/tinymce/tinymce.min.js'
+      provide: HUGERTE_SCRIPT_SRC,
+      useValue: `${HUGERTE_ASSETS_PATH}/hugerte.min.js`
     },
     {
       provide: MAT_DATE_LOCALE,
@@ -291,8 +296,6 @@ export function MarkedOptionsFactory(markedOptionsService: MarkedOptionsService)
     {
       provide: MAT_AUTOCOMPLETE_DEFAULT_OPTIONS,
       useValue: {
-        hasBackdrop: true,
-        backdropClass: 'cdk-overlay-transparent-backdrop',
         hideSingleSelectionIndicator: true
       }
     },
@@ -401,6 +404,9 @@ export function MarkedOptionsFactory(markedOptionsService: MarkedOptionsService)
     MarkdownEditorComponent,
     TruncateWithTooltipDirective,
     ContextMenuDirective,
+    ChipOverflowDirective,
+    PhotoSwipeGalleryDirective,
+    AutocompleteAutoScrollRepositionDirective,
     NospacePipe,
     MillisecondsToTimeStringPipe,
     EnumToArrayPipe,
@@ -422,7 +428,6 @@ export function MarkedOptionsFactory(markedOptionsService: MarkedOptionsService)
     EntityGatewaySelectComponent,
     ContactComponent,
     OtaPackageAutocompleteComponent,
-    WidgetsBundleSearchComponent,
     CopyButtonComponent,
     TogglePasswordComponent,
     WidgetButtonToggleComponent,
@@ -675,6 +680,9 @@ export function MarkedOptionsFactory(markedOptionsService: MarkedOptionsService)
     MarkdownEditorComponent,
     TruncateWithTooltipDirective,
     ContextMenuDirective,
+    ChipOverflowDirective,
+    PhotoSwipeGalleryDirective,
+    AutocompleteAutoScrollRepositionDirective,
     NospacePipe,
     MillisecondsToTimeStringPipe,
     EnumToArrayPipe,
@@ -697,7 +705,6 @@ export function MarkedOptionsFactory(markedOptionsService: MarkedOptionsService)
     EntityGatewaySelectComponent,
     ContactComponent,
     OtaPackageAutocompleteComponent,
-    WidgetsBundleSearchComponent,
     CopyButtonComponent,
     TogglePasswordComponent,
     WidgetButtonToggleComponent,

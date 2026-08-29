@@ -16,7 +16,7 @@
 
 -->
 <ng-container [formGroup]="scadaSymbolWidgetConfigForm">
-  <tb-target-device formControlName="targetDevice"></tb-target-device>
+  <tb-target-device formControlName="targetDevice" appearance="outline"></tb-target-device>
   <div class="tb-form-panel">
     <div class="tb-form-panel-title" translate>scada.symbol.symbol</div>
     <tb-scada-symbol-input required
@@ -40,7 +40,6 @@
                                           brackets="curly"
                                           subscriptSizing="dynamic"
                                           predefinedValuesButton="true"
-                                          [disabled]="!scadaSymbolWidgetConfigForm.get('showTitle').value"
                                           [predefinedValues]="predefinedValues"
                                           placeholderText="{{ 'widget-config.set' | translate }}"
                                           formControlName="title"

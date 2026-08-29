@@ -41,8 +41,10 @@ export interface SysParamsState {
   calculatedFieldDebugPerTenantLimitsConfiguration?: string;
   intermediateAggregationIntervalInSecForCF: number;
   trendzSettings: TrendzSettings;
+  allowKeyFiltersOrConditions: boolean;
   nullsOrderStrategy: NullsOrderStrategy;
   edqsEnabled: boolean;
+  iotHubBaseUrl: string;
 }
 
 export interface SysParams extends SysParamsState {

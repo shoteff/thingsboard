@@ -25,7 +25,7 @@ if [ "$1" ]; then
 fi
 
 ### Added by SHOTE
-export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+export JAVA_HOME=/usr/lib/jvm/java-25-openjdk-amd64
 
 echo "Building and pushing [amd64,arm64] projects '$PROJECTS' ..."
 echo "HELP: usage ./build.sh [projects]"
